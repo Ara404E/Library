@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+    <title>MY LLiBrArYYY</title>
 </head>
 <body>
+    <section id="header-section">
+        <h1> Library <span> Ara's Library </span></h1>
+          <div id="add-div">
+            <button data-modal-target="#modal" id="add-book-button">
+                <span> + Book </span>
+            </button>
+        </section>
+</div>
+<div id="modal" class="modal">
+    <div id="modal-header">
+        <div id="title">
+         Add new Book 
+        </div>
+             <button data-close-button id="close-button"> &times;</button>
+        </div>
+        <div id="modal-body">
+        <form onsubmit="addBookToLibrary(event)">
+            <label for="book-name">
+                Name
+            </label> <br>
+             <input type="text" name="bookName" id="book-name" required placeholder="Ex. Fire and Blood" > <br>
+            <label for="author-name">
+                Author
+            </label> <br>
+             <input type="text" name="AuthorName" id="author-name" required placeholder="George R.R. Martin"> <br>
+            <label for="page">
+                Pages
+            </label> <br>
+             <input type="number" name="numberOfPage" id="page" required placeholder="736"> <br>
+           <div id="status-div">
+               <select name="" id="book-status"> 
+                   <option value="Have read">Read</option>
+                   <option value="Have not Read">Have not Read</option>
+                </select> 
+            </div>
+            <div id="button-div">
+                <button id="modal-add-button" > Add </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="overlay">
     
+</div>
+<div id="book-display">
+    <div id="card-section">
+        <div id="card" class="card">
+            <h3 class="book-title"> Fire and Blood  </h3>
+            <p class="author">George R.R. Martin </p>
+            <p class="pages"> 729 Pages</p>
+            <button id="Status-button"> Have Read </button>
+            <button id="remove-btn" class="remove-btn"> Remove </button>        
+        </div>
+        <div id="card" class="card">
+            <h3 class="book-title"> No Longer Human  </h3>
+            <p class="author">George R.R. Martin </p>
+            <p class="pages"> 729 Pages</p>
+            <button id="Status-button"> Have Read </button>
+            <button id="remove-btn" class="remove-btn"> Remove </button>
+            
+        </div>
+        <div id="card" class="card">
+            <h3 class="book-title"> Ara  </h3>
+            <p class="author">George R.R. Martin </p>
+            <p class="pages"> 729 Pages</p>
+            <button id="Status-button"> Have Read </button>
+            <button id="remove-btn" class="remove-btn"> Remove </button>
+        </div>
+    </div>
+</div>
+<!-- <hr id="plug-hr"> -->
+
+<script src="script.js"></script>
 </body>
 </html>

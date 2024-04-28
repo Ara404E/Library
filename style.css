@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+html{
+  background-color: #D2E9E9;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal
+}
+#header-section{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-size: 1.50rem;
+}
+#header-section > h1{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-left: 20px;
+}
+#header-section > button{
+    margin-bottom: 20px;
+}
+h1 > span{
+    font-weight: 400;
+    padding-right: 20px;
+}
+#add-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+
+#add-book-button{
+    border-color: #A6B1E1;
+    border-radius: 5px;
+    padding: 0;
+    width: 80px;
+    height:50px;
+    background-color: #CADEFC;
+    cursor: pointer;
+    font-size: 1.25rem;
+    margin:30px;
+}
+#add-button:hover{
+    background-color: #A6B1E1;
+    border-radius: 10px;
+}
+#close-button{
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#close-button:hover{
+   color: red;
+}
+#modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    border: solid black 2px;
+    z-index: 10;
+    background-color: white;
+    height: 68%;
+    max-width: 80%;
+    font-size: 1.25rem;
+    margin-top: 30px;
+}
+
+#modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+#modal-header{
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.50rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #DCD6F7;
+}
+
+#modal-body{
+    padding: 10px 15px;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+#modal-add-button{
+    border-radius: 5px;
+    padding: 0;
+    width: 200px;
+    height: 30px;
+    background-color: #E4F9F5;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+#modal-add-button:hover{
+    background-color: #769FCD;
+}
+#button-div{
+    display: flex;
+    justify-content: center;
+}
+
+#status-div{
+    display: flex;
+    justify-content: center;
+}
+
+#card-section {
+    width: clamp(280px, 70%, 100vw);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    margin: 10px auto;
+}
+
+#card {
+    border: solid 1px#dfe6dd;
+    background-color: white;
+    box-shadow: 4px 4px 4px 2px rgba(219, 219, 219, 0.473);
+    border-radius: 10px;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    transition: box-shadow 0.1s, transform 0.1s;
+}
+
+#card > button{
+      border: 0;
+    border-radius: 8px;
+    flex-grow: 1;
+    height: 40px;
+    font-weight: 500;
+    font-size: medium;
+margin: 5px;
+}
+#Status-button{
+    background-color: #93BFCF ;
+}
+#remove-btn{
+    background-color: #DEFCF9;
+    border-color: #dc3545;
+    color: #dc3545;
+    background-color: transparent;
+}
+
+#remove-btn:hover{
+    border-color: #dc3545;
+    background-color: #dc3545;
+    color: white;
+}
+
+
+select{
+    background-color:#AEBDCA ;
+    max-width: 200px;
+    border-radius: 20px;
+    margin: 30px;
+}
+label{
+    margin: 20px 10px;
+    font-weight: 500;
+}
+input{
+    margin: 15px 15px;
+    width: 250px;
+    border-radius: 5px;
+    height:25px;
+    
+}
+input:hover{
+    box-shadow: 1px 1px;
+}
