@@ -6,7 +6,8 @@ const overlay=document.querySelector('#overlay');
 const cardSection=document.querySelector('#card-section');
 const card=document.querySelectorAll('#card');
 const removeBtn=document.querySelectorAll("#remove-btn");
-const bookStatusBtn=document.querySelectorAll("#status-button");
+const bookStatusBtn=document.querySelectorAll("#Status-button");
+let isToggled=false;
 
 removeBtn.forEach(button =>{
   button.addEventListener('click', ()=>{
@@ -20,9 +21,8 @@ removeBtn.forEach(button =>{
 
 bookStatusBtn.forEach(button =>{
   button.addEventListener('click', ()=>{
-    const card=button.closest('#card');
-    button.textContent='Have not Read';
-    card.append(button)
+    button.textContent=!isToggled  ? 'Have Not Read' : 'Have Read';
+    isToggled=!isToggled;
   });
 });
 
@@ -59,7 +59,8 @@ function closeModal(modal){
 
 
 
-const myLibrary = [];
+const myLibrary = []
+;
 
 
 
@@ -68,8 +69,16 @@ function Book(title,author,page,status) {
   this.author=author;
   this.page=page;
   this.status=status;
+  this.read= function(){
+    if(this.status){
+      return "Have Read";
+    }
+    else{
+      return "Have Not Read";
+    }
+  }
   this.info=function(){
-    return `${this.title} by ${this.author}, ${this.page} pages, status: ${this.status}`;
+    return `${this.title} by ${this.author}, ${this.page} pages, status: ${this.read()}`;
   }
 }
 
@@ -80,6 +89,7 @@ function addBookToLibrary(event) {
     const authorName = document.getElementById('author-name').value;
     const numberOfPage = document.getElementById('page').value;
     const bookStatus = document.getElementById('book-status').value;
+
 
   const cardDiv=document.createElement('div');
   cardDiv.setAttribute('id','card');
@@ -99,6 +109,7 @@ function addBookToLibrary(event) {
 
   const statusBtn=document.createElement('button');
   statusBtn.setAttribute('id','Status-button');
+  statusBtn.classList.add('book-status');
   statusBtn.textContent=bookStatus;
 
   const removeBook=document.createElement('button');
@@ -113,14 +124,21 @@ function addBookToLibrary(event) {
     card.remove()
 }
 });
-
+  
+statusBtn.addEventListener('click', ()=>{
+    statusBtn.textContent=!isToggled ? 'Have Not Read' : 'Have Read';
+    isToggled=!isToggled; 
+});
  
-  cardSection.append(cardDiv)
-  cardDiv.append(h3)
-  cardDiv.append(authorParagraph)
-  cardDiv.append(NumOfPageParagraph)
+  cardSection.append(cardDiv);
+  cardDiv.append(h3);
+  cardDiv.append(authorParagraph);
+  cardDiv.append(NumOfPageParagraph);
   cardDiv.append(statusBtn);
   cardDiv.append(removeBook);
+  console.log(statusBtn.textContent)
+   myLibrary.push (new Book(bookName,authorName,numberOfPage,bookStatus)); 
+   console.table(myLibrary)  
   const modal = document.querySelector('.modal.active');
   closeModal(modal);
 }

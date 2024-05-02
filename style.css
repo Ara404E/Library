@@ -3,6 +3,9 @@
   margin:0;
   padding:0;
 }
+ button{
+    cursor: pointer;
+}
 html{
   background-color: #D2E9E9;
   font-family: "Montserrat", sans-serif;
@@ -47,9 +50,9 @@ h1 > span{
     font-size: 1.25rem;
     margin:30px;
 }
-#add-button:hover{
-    background-color: #A6B1E1;
-    border-radius: 10px;
+#add-book-button:hover{
+    border-radius: 15%;
+    box-shadow: 1px 1px;
 }
 #close-button{
     font-size: 2rem;
@@ -166,6 +169,10 @@ margin: 5px;
 #Status-button{
     background-color: #93BFCF ;
 }
+#Status-button:hover{
+background: rgb(34,173,144);
+background: linear-gradient(86deg, rgba(34,173,144,1) 21%, rgba(90,151,181,1) 62%);
+}
 #remove-btn{
     background-color: #DEFCF9;
     border-color: #dc3545;
@@ -179,6 +186,10 @@ margin: 5px;
     color: white;
 }
 
+.plug-paragraph{
+    margin: 10px;
+    text-align: center;
+}
 
 select{
     background-color:#AEBDCA ;
