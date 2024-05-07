@@ -142,3 +142,4 @@ statusBtn.addEventListener('click', ()=>{
   const modal = document.querySelector('.modal.active');
   closeModal(modal);
 }
+
