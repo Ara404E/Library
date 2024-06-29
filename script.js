@@ -59,8 +59,7 @@ function closeModal(modal){
 
 
 
-const myLibrary = []
-;
+const myLibrary = [];
 
 
 
