@@ -63,23 +63,28 @@ const myLibrary = [];
 
 
 
-function Book(title,author,page,status) {
-  this.title=title;
-  this.author=author;
-  this.page=page;
-  this.status=status;
-  this.read= function(){
-    if(this.status){
-      return "Have Read";
-    }
-    else{
-      return "Have Not Read";
-    }
+class Book {
+  constructor (title,author,page,status) {
+    this.title=title;
+    this.author=author;
+    this.page=page;
+    this.status=status;
   }
-  this.info=function(){
-    return `${this.title} by ${this.author}, ${this.page} pages, status: ${this.read()}`;
-  }
+
+    read(){
+      if(this.status){
+        return "Have Read";
+      }
+      else{
+        return "Have Not Read";
+      }
+    }
+  info(){
+      return `${this.title} by ${this.author}, ${this.page} pages, status: ${this.read()}`;
+    }
+
 }
+
 
  
 function addBookToLibrary(event) {
